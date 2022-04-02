@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<ListView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/listView"
+		android:layout_weight="1.0"/>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="15dp"
+		android:gravity="right">
+
+		<ImageView
+			android:src="@drawable/add_ico"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:id="@+id/addTrigger"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

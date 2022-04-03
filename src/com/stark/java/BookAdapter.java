@@ -23,9 +23,12 @@ public class BookAdapter extends ArrayAdapter<Book> {
 		}
 
 		TextView titleV = convertView.findViewById(R.id.titleView);
+		
 		TextView yearV = convertView.findViewById(R.id.item_year);
 		titleV.setText(book.title);
 		yearV.setText("("+book.year+")");
+		titleV.setTextColor(getContext().getResources().getColor(R.color.white));
+		yearV.setTextColor(getContext().getResources().getColor(R.color.white));
 		return convertView;
 	}
 }

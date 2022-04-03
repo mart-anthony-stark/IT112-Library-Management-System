@@ -5,7 +5,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -17,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MainActivity extends Activity { 
     private Database db;
@@ -25,7 +30,7 @@ public class MainActivity extends Activity {
 	private ListView lv;
 	private Dialog addDialog, editDialog;
 	private ImageView addTrigger;
-	private EditText addTitle, addAuthor, addYear, editTitle, editAuthor, editYear;
+	private EditText addTitle, addAuthor, addYear, editTitle, editAuthor, editYear, searchBar;
 	private Button addBtn, saveBtn, delBtn;
 	private Book currentBook;
     @Override
@@ -33,16 +38,19 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 		
+		
 		db = new Database(this);
 		items = new ArrayList<Book>();
 		lv = findViewById(R.id.listView);
 		
+		searchBar = findViewById(R.id.searchBar);
 		//Init add item dialog
-		addDialog = new Dialog(MainActivity.this);
+		addDialog = new Dialog(MainActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
 		addDialog.setTitle("Add Book");
 		addDialog.setContentView(R.layout.add_item);
 	    addDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
 		addDialog.setCancelable(true);
+		
 		
 		//Add Input views
 		addTitle = addDialog.findViewById(R.id.addTitle);
@@ -59,7 +67,7 @@ public class MainActivity extends Activity {
 			});
 		
 		//Edit dialog
-		editDialog = new Dialog(this);
+		editDialog = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
 		editDialog.setTitle("Edit Book Record");
 		editDialog.setContentView(R.layout.edit_item);
 		editDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -98,6 +106,28 @@ public class MainActivity extends Activity {
 					}
 				});
 			
+				//Handle searchbar
+			searchBar.addTextChangedListener(new TextWatcher(){
+					@Override
+					public void beforeTextChanged(CharSequence p1, int p2, int p3, int p4) {
+					}
+
+					@Override
+					public void onTextChanged(CharSequence p1, int p2, int p3, int p4) {
+					}
+
+					@Override
+					public void afterTextChanged(Editable p1) {
+						String search = searchBar.getText().toString().trim().toUpperCase();
+						if(search.equals("")){
+							getAllData();
+						}else{
+							searchData(search);
+						}
+					}
+				});
+				
+				
 				//Handle update book
 			saveBtn.setOnClickListener(new OnClickListener(){
 					@Override
@@ -158,6 +188,35 @@ public class MainActivity extends Activity {
 		BookAdapter itemsAdapter = new BookAdapter(this, items);
 		lv.setAdapter(itemsAdapter);
 		
+		// Show edit dialog when list item clicked
+		lv.setOnItemClickListener(new OnItemClickListener(){
+				@Override
+				public void onItemClick(AdapterView<?> p1, View p2, int p3, long p4) {
+					Book book = items.get(p3);
+					currentBook = book;
+					editTitle.setText(book.title);
+					editAuthor.setText(book.author);
+					editYear.setText(book.year);
+					Toast.makeText(getApplicationContext(), book.title, Toast.LENGTH_LONG).show();
+					editDialog.show();
+				}
+			});
+	}
+	
+	
+	//Search data from db and display on list
+	void searchData(String search){
+		getAllData();
+		
+		for(Iterator<Book> it=items.iterator(); it.hasNext();){
+			if(!it.next().title.toUpperCase().contains(search)){
+				it.remove();
+			}
+		}
+		
+		BookAdapter itemsAdapter = new BookAdapter(this, items);
+		lv.setAdapter(itemsAdapter);
+
 		// Show edit dialog when list item clicked
 		lv.setOnItemClickListener(new OnItemClickListener(){
 				@Override

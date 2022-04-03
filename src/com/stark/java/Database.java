@@ -25,7 +25,7 @@ public class Database extends SQLiteOpenHelper {
 	
 	@Override 
     public void onCreate(SQLiteDatabase db) { 
-		db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_NAME+"("+COL1+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COL2+" TEXT,"+COL3+" TEXT,"+COL4+" TEXT)"); 
+		db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_NAME+"("+COL1+" INTEGER PRIMARY KEY AUTOINCREMENT,"+COL2+" TEXT COLLATE NOCASE,"+COL3+" TEXT COLLATE NOCASE,"+COL4+" TEXT)"); 
     } 
 
     @Override 
@@ -44,6 +44,13 @@ public class Database extends SQLiteOpenHelper {
 	public Cursor getData(String title){ 
 		SQLiteDatabase db = this.getWritableDatabase(); 
 		String query="SELECT * FROM "+TABLE_NAME+" WHERE "+COL2+"='"+title+"'"; 
+		Cursor  cursor = db.rawQuery(query,null); 
+		return cursor; 
+    } 
+	
+	public Cursor searchData(String search){ 
+		SQLiteDatabase db = this.getWritableDatabase(); 
+		String query="SELECT * FROM "+TABLE_NAME+" WHERE "+COL2+"='"+search+"' OR "+COL3+"='"+search+"' COLLATE NOCASE"; 
 		Cursor  cursor = db.rawQuery(query,null); 
 		return cursor; 
     } 

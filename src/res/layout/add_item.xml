@@ -4,14 +4,26 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:orientation="vertical"
-	android:layout_margin="10dp">
+	android:layout_marginLeft="10dp"
+	android:layout_marginRight="10dp">
 
 	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:padding="15dp"
-		android:gravity="right|center">
+		android:gravity="right|center"
+		android:background="#FF063459"
+		android:padding="35dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Add Book"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_gravity="left"
+			android:textColor="#FFFFFFFF"
+			android:layout_marginBottom="15dp"
+			android:textStyle="bold"/>
 
 		<LinearLayout
 			android:orientation="vertical"
@@ -29,7 +41,8 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="Title"
-					android:textAppearance="?android:attr/textAppearanceMedium"/>
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:textColor="#FFFFFFFF"/>
 
 			</LinearLayout>
 
@@ -37,7 +50,11 @@
 				android:layout_width="match_parent"
 				android:ems="10"
 				android:layout_height="wrap_content"
-				android:id="@+id/addTitle"/>
+				android:id="@+id/addTitle"
+				android:textColor="#FFFFFFFF"
+				android:singleLine="true"
+				android:padding="10dp"
+				android:background="@drawable/input"/>
 
 		</LinearLayout>
 
@@ -57,7 +74,8 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="Author"
-					android:textAppearance="?android:attr/textAppearanceMedium"/>
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:textColor="#FFFFFFFF"/>
 
 			</LinearLayout>
 
@@ -65,7 +83,11 @@
 				android:layout_width="match_parent"
 				android:ems="10"
 				android:layout_height="wrap_content"
-				android:id="@+id/addAuthor"/>
+				android:id="@+id/addAuthor"
+				android:textColor="#FFFFFFFF"
+				android:singleLine="true"
+				android:padding="10dp"
+				android:background="@drawable/input"/>
 
 		</LinearLayout>
 
@@ -85,7 +107,8 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="Year"
-					android:textAppearance="?android:attr/textAppearanceMedium"/>
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:textColor="#FFFFFFFF"/>
 
 			</LinearLayout>
 
@@ -93,7 +116,13 @@
 				android:layout_width="match_parent"
 				android:ems="10"
 				android:layout_height="wrap_content"
-				android:id="@+id/addYear"/>
+				android:id="@+id/addYear"
+				android:inputType="number"
+				android:textColor="#FFFFFFFF"
+				android:singleLine="true"
+				android:padding="10dp"
+				android:background="@drawable/input"
+				android:layout_marginBottom="15dp"/>
 
 		</LinearLayout>
 
@@ -108,7 +137,8 @@
 				android:text="Save"
 				android:id="@+id/addBtn"
 				android:background="@drawable/success_btn"
-				android:textColor="#FFFFFFFF"/>
+				android:textColor="#FFFFFFFF"
+				android:padding="15dp"/>
 
 		</LinearLayout>
 

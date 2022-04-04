@@ -54,7 +54,8 @@
 				android:textColor="#FFFFFFFF"
 				android:singleLine="true"
 				android:padding="10dp"
-				android:background="@drawable/input"/>
+				android:background="@drawable/input"
+				android:gravity="center"/>
 
 		</LinearLayout>
 
@@ -87,7 +88,8 @@
 				android:textColor="#FFFFFFFF"
 				android:singleLine="true"
 				android:padding="10dp"
-				android:background="@drawable/input"/>
+				android:background="@drawable/input"
+				android:gravity="center"/>
 
 		</LinearLayout>
 
@@ -122,7 +124,8 @@
 				android:singleLine="true"
 				android:padding="10dp"
 				android:background="@drawable/input"
-				android:layout_marginBottom="15dp"/>
+				android:layout_marginBottom="15dp"
+				android:gravity="center"/>
 
 		</LinearLayout>
 

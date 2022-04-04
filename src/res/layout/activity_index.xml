@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="#FF011627"
+	android:gravity="center">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:gravity="center">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Library Management"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:textColor="#FFFFFFFF"
+			android:textStyle="bold"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Large Text"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:textColor="#FFFFFFFF"
+			android:textStyle="bold"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:gravity="center"
+		android:paddingLeft="20dp"
+		android:paddingRight="20dp">
+
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="Go to Library"
+			android:background="@drawable/cta"
+			android:id="@+id/gotoLib"
+			android:textColor="#FFFFFFFF"
+			android:layout_marginBottom="10dp"/>
+
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="About"
+			android:id="@+id/aboutBtn"
+			android:textColor="#FFFFFFFF"
+			android:background="@drawable/cta"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="0.5"
+		android:padding="15dp"
+		android:gravity="bottom">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Developed by:"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:textColor="#FFFFFFFF"
+			android:layout_marginBottom="10dp"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Mart Anthony Salazar"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:textColor="#FFFFFFFF"
+			android:layout_marginBottom="10dp"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Warren Ereño"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:textColor="#FFFFFFFF"
+			android:layout_marginBottom="10dp"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Rafael Concepcion"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:textColor="#FFFFFFFF"
+			android:layout_marginBottom="10dp"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

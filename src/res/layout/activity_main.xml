@@ -6,18 +6,33 @@
 	android:orientation="vertical"
 	android:background="#FF011627">
 
-	<EditText
+	<LinearLayout
+		android:orientation="horizontal"
 		android:layout_width="match_parent"
-		android:ems="10"
 		android:layout_height="wrap_content"
-		android:hint="Search book"
-		android:padding="10dp"
-		android:id="@+id/searchBar"
-		android:textColorHint="#FFFFFFFF"
+		android:gravity="center"
 		android:background="@drawable/input"
-		android:textColor="#FFFFFFFF"
-		android:layout_marginTop="10dp"
-		android:layout_margin="10dp"/>
+		android:padding="5dp"
+		android:layout_margin="10dp">
+
+		<ImageView
+			android:src="@drawable/search"
+			android:layout_width="35dp"
+			android:layout_height="35dp"/>
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="Search book"
+			android:padding="10dp"
+			android:id="@+id/searchBar"
+			android:textColorHint="#FFFFFFFF"
+			android:textColor="#FFFFFFFF"
+			android:layout_weight="1.0"
+			android:singleLine="true"/>
+
+	</LinearLayout>
 
 	<ListView
 		android:layout_width="match_parent"

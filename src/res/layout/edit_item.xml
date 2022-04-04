@@ -53,7 +53,9 @@
 				android:id="@+id/editTitle"
 				android:background="@drawable/input"
 				android:padding="10dp"
-				android:textColor="#FFFFFFFF"/>
+				android:textColor="#FFFFFFFF"
+				android:gravity="center"
+				android:singleLine="true"/>
 
 		</LinearLayout>
 
@@ -85,7 +87,9 @@
 				android:id="@+id/editAuthor"
 				android:background="@drawable/input"
 				android:padding="10dp"
-				android:textColor="#FFFFFFFF"/>
+				android:textColor="#FFFFFFFF"
+				android:gravity="center"
+				android:singleLine="true"/>
 
 		</LinearLayout>
 
@@ -118,7 +122,9 @@
 				android:inputType="number"
 				android:background="@drawable/input"
 				android:padding="10dp"
-				android:textColor="#FFFFFFFF"/>
+				android:textColor="#FFFFFFFF"
+				android:gravity="center"
+				android:singleLine="true"/>
 
 		</LinearLayout>
 

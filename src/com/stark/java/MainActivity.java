@@ -5,11 +5,10 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -37,8 +36,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
-		
+	
 		db = new Database(this);
 		items = new ArrayList<Book>();
 		lv = findViewById(R.id.listView);
@@ -177,6 +177,16 @@ public class MainActivity extends Activity {
 			Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
 		}
     }
+	
+	//Handle back press
+	public boolean onOptionsItemSelected(MenuItem item){
+		switch(item.getItemId()){
+			case android.R.id.home:
+				finish();
+				return true;
+		}
+		return super.onOptionsItemSelected(item);
+	};
 	
 	//Fetch all data from db and display on list
 	void getAllData(){

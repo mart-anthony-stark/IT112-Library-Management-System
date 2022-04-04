@@ -35,10 +35,11 @@ public class Database extends SQLiteOpenHelper {
     }
 	
 	public void insertData(String title, String author, String year) { 
-		cv.put(COL2, title); 
-		cv.put(COL3, author); 
-		cv.put(COL4, year);
-		db.insert(TABLE_NAME, null, cv);
+	    ContentValues c = new ContentValues();
+		c.put(COL2, title); 
+		c.put(COL3, author); 
+		c.put(COL4, year);
+		db.insert(TABLE_NAME, null, c);
     } 
 
 	public Cursor getData(String title){ 

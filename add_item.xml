@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:layout_marginLeft="10dp"
+	android:layout_marginRight="10dp">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="right|center"
+		android:background="#FF063459"
+		android:padding="35dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Add Book"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_gravity="left"
+			android:textColor="#FFFFFFFF"
+			android:layout_marginBottom="15dp"
+			android:textStyle="bold"/>
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp">
+
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1.0">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Title"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:textColor="#FFFFFFFF"/>
+
+			</LinearLayout>
+
+			<EditText
+				android:layout_width="match_parent"
+				android:ems="10"
+				android:layout_height="wrap_content"
+				android:id="@+id/addTitle"
+				android:textColor="#FFFFFFFF"
+				android:singleLine="true"
+				android:padding="10dp"
+				android:background="@drawable/input"
+				android:gravity="center"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp">
+
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1.0">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Author"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:textColor="#FFFFFFFF"/>
+
+			</LinearLayout>
+
+			<EditText
+				android:layout_width="match_parent"
+				android:ems="10"
+				android:layout_height="wrap_content"
+				android:id="@+id/addAuthor"
+				android:textColor="#FFFFFFFF"
+				android:singleLine="true"
+				android:padding="10dp"
+				android:background="@drawable/input"
+				android:gravity="center"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp">
+
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1.0">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Year"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:textColor="#FFFFFFFF"/>
+
+			</LinearLayout>
+
+			<EditText
+				android:layout_width="match_parent"
+				android:ems="10"
+				android:layout_height="wrap_content"
+				android:id="@+id/addYear"
+				android:inputType="number"
+				android:textColor="#FFFFFFFF"
+				android:singleLine="true"
+				android:padding="10dp"
+				android:background="@drawable/input"
+				android:layout_marginBottom="15dp"
+				android:gravity="center"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Save"
+				android:id="@+id/addBtn"
+				android:background="@drawable/success_btn"
+				android:textColor="#FFFFFFFF"
+				android:padding="15dp"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
+

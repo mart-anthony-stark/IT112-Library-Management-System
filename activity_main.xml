@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="#FF011627">
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:background="@drawable/input"
+		android:padding="5dp"
+		android:layout_margin="10dp">
+
+		<ImageView
+			android:src="@drawable/search"
+			android:layout_width="35dp"
+			android:layout_height="35dp"/>
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="Search book"
+			android:padding="10dp"
+			android:id="@+id/searchBar"
+			android:textColorHint="#FFFFFFFF"
+			android:textColor="#FFFFFFFF"
+			android:layout_weight="1.0"
+			android:singleLine="true"/>
+
+	</LinearLayout>
+
+	<ListView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/listView"
+		android:layout_weight="1.0"/>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:padding="10dp"
+		android:layout_gravity="right">
+
+		<ImageView
+			android:src="@drawable/add_ico"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:id="@+id/addTrigger"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+
